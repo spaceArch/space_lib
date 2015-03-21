@@ -3,7 +3,6 @@ var fs = require('fs');
 var child_process = require('child_process');
 var sizeOf = require('image-size');
 var extend = require('node.extend');
-var sleep = require('sleep').sleep;
 var im = require('imagemagick');
 
 var rootPath = process.env.SPACE_ARCH_PATH;
@@ -25,14 +24,14 @@ function getZoom(size) {
 function tile(questId, sourceImage, testing) {
   if(testing === true) {
     return new Promise(function(res, rej) {
-      sleep(5);
-
-      res({
-        width: 100,
-        height: 100,
-        imgName: sourceImage,
-        maxZoom: 4
-      });
+      setTimeout(function() {
+        res({
+          width: 100,
+          height: 100,
+          imgName: sourceImage,
+          maxZoom: 4
+        });
+      }, 5000);
     });
   }
 
