@@ -1,0 +1,8 @@
+{
+  "name": "space_lib",
+  "main": "space.js",
+  "dependencies": {
+    "image-size": "*",
+    "node.extend": "*"
+  }
+}
