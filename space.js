@@ -115,5 +115,6 @@ function createThumb(questId, imageName) {
 
 module.exports.tile = tile;
 module.exports.getTilesPath = getTilesPath;
+module.exports.getThumbPath = getThumbPath;
 module.exports.getImagePath = getImagePath;
 module.exports.createThumb = createThumb;
