@@ -114,5 +114,3 @@ module.exports.tile = tile;
 module.exports.getTilesPath = getTilesPath;
 module.exports.getImagePath = getImagePath;
 module.exports.createThumb = createThumb;
-
-tile('kZcfg', 'test.jpg')
