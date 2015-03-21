@@ -5,6 +5,6 @@
   "dependencies": {
     "image-size": "*",
     "node.extend": "*",
-    "space_lib": "git://github.com/spaceArch/space_lib.git#master"
+    "sleep": "*"
   }
 }
