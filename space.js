@@ -36,7 +36,7 @@ function tile(questId, sourceImage, testing) {
   var createtiles = path.resolve('./createtiles.sh');
 
   process.chdir(rootPath);
-
+  console.log('test');
   try {
     fs.mkdirSync('./store/quest_{questId}/tiles'.supplant({
       questId: questId
@@ -68,12 +68,15 @@ function tile(questId, sourceImage, testing) {
   });
 
   return new Promise(function(res, rej) {
-    var p = child_process.exec('{createtiles} {imgPath} {tilesPath} {maxZoom}'.supplant({
+    var cmd = '{createtiles} {imgPath} {tilesPath} {maxZoom}'.supplant({
       createtiles: createtiles,
       imgPath: imgPath,
       tilesPath: tilesPath,
       maxZoom: maxZoom
-    }));
+    });
+
+    var p = child_process.exec(cmd);
+    console.log(cmd);
 
     p.on('close', function() {
       res(info);
