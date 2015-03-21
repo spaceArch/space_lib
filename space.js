@@ -41,7 +41,7 @@ function tile(questId, sourceImage, testing) {
   process.chdir(rootPath);
 
   try {
-    fs.mkdirSync('./store/{questId}/tiles'.supplant({
+    fs.mkdirSync('./store/quest_{questId}/tiles'.supplant({
       questId: questId
     }), '775');
   }
@@ -79,15 +79,15 @@ function tile(questId, sourceImage, testing) {
 }
 
 function getTilesPath(questId, imageName) {
-  return path.relative(rootPath, path.join(rootPath, 'store', questId, 'tiles', imageName));
+  return path.relative(rootPath, path.join(rootPath, 'store', 'quest_' + questId, 'tiles', imageName));
 }
 
 function getImagePath(questId, imageName) {
-  return path.relative(rootPath, path.join(rootPath, 'store', questId, 'images', imageName));
+  return path.relative(rootPath, path.join(rootPath, 'store', 'quest_' + questId, 'images', imageName));
 }
 
 function getThumbPath(questId, imageName) {
-  return path.relative(rootPath, path.join(rootPath, 'store', questId, 'images', imageName + '.thumb.jpg'));
+  return path.relative(rootPath, path.join(rootPath, 'store', 'quest_' + questId, 'images', imageName + '.thumb.jpg'));
 }
 
 function createThumb(questId, imageName) {
