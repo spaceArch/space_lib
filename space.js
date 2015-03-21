@@ -18,10 +18,6 @@ String.prototype.supplant = function (o) {
     );
 };
 
-function getZoom(size) {
-  parseInt(Math.log2(Math.max(size.width, size.height) / 256) + 3);
-}
-
 function tile(questId, sourceImage, testing) {
   if(testing === true) {
     return new Promise(function(res, rej) {
@@ -60,7 +56,7 @@ function tile(questId, sourceImage, testing) {
 
   var imgSize = sizeOf(imgPath);
 
-  var maxZoom = getZoom(imgSize);
+  var maxZoom = parseInt(Math.log2(Math.max(imgSize.width, imgSize.height) / 256) + 3)
 
   var info = extend(imgSize, {
     imgName: sourceImage,
