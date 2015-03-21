@@ -50,7 +50,7 @@ function tile(questId, sourceImage, testing) {
   }));
 
   var tilesPath = path.resolve('./store/quest_{questId}/tiles/{imgName}'.supplant({
-    imgName: path.basename(sourceImage, path.extname(sourceImage)),
+    imgName: sourceImage,
     questId: questId
   }));
 
@@ -114,3 +114,5 @@ module.exports.tile = tile;
 module.exports.getTilesPath = getTilesPath;
 module.exports.getImagePath = getImagePath;
 module.exports.createThumb = createThumb;
+
+tile('kZcfg', 'test.jpg')
