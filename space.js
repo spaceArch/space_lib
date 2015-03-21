@@ -33,7 +33,7 @@ function tile(questId, sourceImage, testing) {
   }
 
 
-  var createtiles = path.join(__dirname, path.resolve('./createtiles.sh'));
+  var createtiles = path.join(__dirname, './createtiles.sh');
 
   process.chdir(rootPath);
   console.log('test');
