@@ -1,0 +1,73 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@2.7.1
+3 info using node@v0.12.0
+4 warn package.json space_lib@0.0.1 No description
+5 warn package.json space_lib@0.0.1 No repository field.
+6 warn package.json space_lib@0.0.1 No README data
+7 verbose install where, deps [ '/home/nd0ut/workspace/tiler',
+7 verbose install   [ 'image-size', 'node.extend', 'space_lib' ] ]
+8 verbose install where, peers [ '/home/nd0ut/workspace/tiler', [] ]
+9 info preinstall space_lib@0.0.1
+10 verbose already installed skipping image-size@* /home/nd0ut/workspace/tiler
+11 verbose already installed skipping node.extend@* /home/nd0ut/workspace/tiler
+12 silly cache add args [ 'space_lib@git://github.com/spaceArch/space_lib.git#master',
+12 silly cache add   null ]
+13 verbose cache add spec space_lib@git://github.com/spaceArch/space_lib.git#master
+14 silly cache add parsed spec { raw: 'space_lib@git://github.com/spaceArch/space_lib.git#master',
+14 silly cache add   scope: null,
+14 silly cache add   name: 'space_lib',
+14 silly cache add   rawSpec: 'git://github.com/spaceArch/space_lib.git#master',
+14 silly cache add   spec: 'git://github.com/spaceArch/space_lib.git#master',
+14 silly cache add   type: 'git' }
+15 verbose addRemoteGit git-github-com-spaceArch-space-lib-git-967bc84f not in flight; caching
+16 info git [ 'config', '--get', 'remote.origin.url' ]
+17 verbose addRemoteGit remote.origin.url: git://github.com/spaceArch/space_lib.git
+18 verbose addRemoteGit updating existing cached remote /home/nd0ut/.npm/_git-remotes/git-github-com-spaceArch-space-lib-git-967bc84f
+19 info git [ 'fetch', '-a', 'origin' ]
+20 verbose addRemoteGit git fetch -a origin (git://github.com/spaceArch/space_lib.git)
+21 verbose addRemoteGit set permissions on /home/nd0ut/.npm/_git-remotes/git-github-com-spaceArch-space-lib-git-967bc84f
+22 verbose addRemoteGit original treeish: master
+23 info git [ 'rev-list', '-n1', 'master' ]
+24 silly addRemoteGit resolved treeish: 06e1fa3061acc781ed07938d25de01c50619684d
+25 verbose addRemoteGit resolved Git URL: git://github.com/spaceArch/space_lib.git#06e1fa3061acc781ed07938d25de01c50619684d
+26 silly addRemoteGit Git working directory: /tmp/npm-29008-55423d0f/git-cache-12a84d311c67/06e1fa3061acc781ed07938d25de01c50619684d
+27 info git [ 'clone',
+27 info git   '/home/nd0ut/.npm/_git-remotes/git-github-com-spaceArch-space-lib-git-967bc84f',
+27 info git   '/tmp/npm-29008-55423d0f/git-cache-12a84d311c67/06e1fa3061acc781ed07938d25de01c50619684d' ]
+28 verbose addRemoteGit clone Cloning into '/tmp/npm-29008-55423d0f/git-cache-12a84d311c67/06e1fa3061acc781ed07938d25de01c50619684d'...
+28 verbose addRemoteGit done.
+29 info git [ 'checkout', '06e1fa3061acc781ed07938d25de01c50619684d' ]
+30 verbose addRemoteGit checkout Note: checking out '06e1fa3061acc781ed07938d25de01c50619684d'.
+30 verbose addRemoteGit
+30 verbose addRemoteGit You are in 'detached HEAD' state. You can look around, make experimental
+30 verbose addRemoteGit changes and commit them, and you can discard any commits you make in this
+30 verbose addRemoteGit state without impacting any branches by performing another checkout.
+30 verbose addRemoteGit
+30 verbose addRemoteGit If you want to create a new branch to retain commits you create, you may
+30 verbose addRemoteGit do so (now or later) by using -b with the checkout command again. Example:
+30 verbose addRemoteGit
+30 verbose addRemoteGit   git checkout -b new_branch_name
+30 verbose addRemoteGit
+30 verbose addRemoteGit HEAD is now at 06e1fa3... first commit
+31 error addLocal Could not install /tmp/npm-29008-55423d0f/git-cache-12a84d311c67/06e1fa3061acc781ed07938d25de01c50619684d
+32 verbose stack Error: No version provided in package.json
+32 verbose stack     at /usr/lib/node_modules/npm/lib/cache/add-local.js:70:17
+32 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:52:40
+32 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:376:33
+32 verbose stack     at checkBinReferences_ (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:341:59)
+32 verbose stack     at final (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:373:17)
+32 verbose stack     at then (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:127:33)
+32 verbose stack     at githead_ (/usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:324:40)
+32 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-package-json/read-json.js:318:33
+32 verbose stack     at evalmachine.<anonymous>:336:14
+32 verbose stack     at /usr/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:102:5
+33 verbose cwd /home/nd0ut/workspace/tiler
+34 error Linux 3.15.2-1-ARCH
+35 error argv "/usr/bin/node" "/usr/bin/npm" "install"
+36 error node v0.12.0
+37 error npm  v2.7.1
+38 error No version provided in package.json
+39 error If you need help, you may report this error at:
+39 error     <https://github.com/npm/npm/issues>
+40 verbose exit [ 1, true ]

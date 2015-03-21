@@ -1,5 +1,6 @@
 {
   "name": "space_lib",
+  "version": "0.0.1",
   "main": "space.js",
   "dependencies": {
     "image-size": "*",
