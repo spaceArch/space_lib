@@ -6,7 +6,6 @@
     "image-size": "*",
     "node.extend": "*",
     "imagemagick": "*",
-    "promise": "*",
-    "mathjs": "*"
+    "promise": "*"
   }
 }

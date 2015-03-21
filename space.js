@@ -5,7 +5,6 @@ var sizeOf = require('image-size');
 var extend = require('node.extend');
 var im = require('imagemagick');
 var Promise = require('promise');
-var math = require("mathjs")
 
 var rootPath = process.env.SPACE_ARCH_PATH;
 var rootPath = '/home/nd0ut/workspace/tiler/space_arch';
@@ -57,7 +56,7 @@ function tile(questId, sourceImage, testing) {
 
   var imgSize = sizeOf(imgPath);
 
-  var maxZoom = parseInt(math.log(math.max(imgSize.width, imgSize.height) / 256, 2) + 3)
+  var maxZoom = parseInt(Math.log2(Math.max(imgSize.width, imgSize.height) / 256) + 3)
 
   var info = extend(imgSize, {
     imgName: sourceImage,
