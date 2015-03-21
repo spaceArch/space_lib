@@ -5,6 +5,7 @@
   "dependencies": {
     "image-size": "*",
     "node.extend": "*",
-    "sleep": "*"
+    "sleep": "*",
+    "imagemagick": "*"
   }
 }

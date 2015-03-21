@@ -4,9 +4,10 @@ var child_process = require('child_process');
 var sizeOf = require('image-size');
 var extend = require('node.extend');
 var sleep = require('sleep').sleep;
+var im = require('imagemagick');
 
 var rootPath = process.env.SPACE_ARCH_PATH;
-var rootPath = '/home/nd0ut/workspace/tiler';
+var rootPath = '/home/nd0ut/workspace/tiler/space_arch';
 
 String.prototype.supplant = function (o) {
     return this.replace(/{([^{}]*)}/g,
@@ -18,7 +19,7 @@ String.prototype.supplant = function (o) {
 };
 
 function getZoom(size) {
-  parseInt(Math.log2(Math.max(size.width, size.height) / 256) + 5);
+  parseInt(Math.log2(Math.max(size.width, size.height) / 256) + 3);
 }
 
 function tile(questId, sourceImage, testing) {
@@ -34,6 +35,7 @@ function tile(questId, sourceImage, testing) {
       });
     });
   }
+
 
   var createtiles = path.resolve('./createtiles.sh');
 
@@ -78,13 +80,33 @@ function tile(questId, sourceImage, testing) {
 }
 
 function getTilesPath(questId, imageName) {
-  return path.join(rootPath, 'store', questId, 'tiles', imageName);
+  return path.relative(rootPath, path.join(rootPath, 'store', questId, 'tiles', imageName));
 }
 
 function getImagePath(questId, imageName) {
-  return path.join(rootPath, 'store', questId, 'images', imageName);
+  return path.relative(rootPath, path.join(rootPath, 'store', questId, 'images', imageName));
+}
+
+function getThumbPath(questId, imageName) {
+  return path.relative(rootPath, path.join(rootPath, 'store', questId, 'images', imageName + '.thumb.jpg'));
+}
+
+function createThumb(questId, imageName) {
+  process.chdir(rootPath);
+
+  var image = getImagePath(questId, imageName);
+  var thumb = getImagePath(questId, imageName) + '.thumb.jpg';
+
+  return new Promise(function(res, rej) {
+    im.convert([image, '-thumbnail', '512x512', thumb], function(err, out) {
+      if (err) throw err;
+
+      res(thumb);
+    });
+  });
 }
 
 module.exports.tile = tile;
 module.exports.getTilesPath = getTilesPath;
 module.exports.getImagePath = getImagePath;
+module.exports.createThumb = createThumb;
