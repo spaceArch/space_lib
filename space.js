@@ -94,11 +94,11 @@ function getThumbPath(questId, imageName) {
 function createThumb(questId, imageName) {
   process.chdir(rootPath);
 
-  var image = getImagePath(questId, imageName);
-  var thumb = getImagePath(questId, imageName) + '.thumb.jpg';
+  var image = path.resolve(getImagePath(questId, imageName));
+  var thumb = path.resolve(getImagePath(questId, imageName) + '.thumb.jpg');
 
   return new Promise(function(res, rej) {
-    im.convert(['./' + image, '-thumbnail', '512x512', './' + thumb], function(err, out) {
+    im.convert([image, '-thumbnail', '512x512', thumb], function(err, out) {
       if (err) throw err;
 
       res(thumb);
