@@ -48,11 +48,11 @@ function tile(questId, sourceImage, testing) {
   }
   catch(e) {}
 
-  var imgPath = path.resolve('./store/test_quest/images/{sourceImage}'.supplant({
+  var imgPath = path.resolve('./store/quest_{questId}/images/{sourceImage}'.supplant({
     sourceImage: sourceImage
   }));
 
-  var tilesPath = path.resolve('./store/test_quest/tiles/{imgName}'.supplant({
+  var tilesPath = path.resolve('./store/quest_{questId}/tiles/{imgName}'.supplant({
     imgName: path.basename(sourceImage, path.extname(sourceImage))
   }));
 
@@ -98,7 +98,7 @@ function createThumb(questId, imageName) {
   var thumb = getImagePath(questId, imageName) + '.thumb.jpg';
 
   return new Promise(function(res, rej) {
-    im.convert([image, '-thumbnail', '512x512', thumb], function(err, out) {
+    im.convert(['./' + image, '-thumbnail', '512x512', './' + thumb], function(err, out) {
       if (err) throw err;
 
       res(thumb);
