@@ -4,6 +4,7 @@ var child_process = require('child_process');
 var sizeOf = require('image-size');
 var extend = require('node.extend');
 var im = require('imagemagick');
+var Promise = require('promise').Promise;
 
 var rootPath = process.env.SPACE_ARCH_PATH;
 var rootPath = '/home/nd0ut/workspace/tiler/space_arch';
