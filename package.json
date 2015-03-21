@@ -4,6 +4,7 @@
   "main": "space.js",
   "dependencies": {
     "image-size": "*",
-    "node.extend": "*"
+    "node.extend": "*",
+    "space_lib": "git://github.com/spaceArch/space_lib.git#master"
   }
 }
