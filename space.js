@@ -56,11 +56,9 @@ function tile(questId, sourceImage, testing) {
 
   var imgSize = sizeOf(imgPath);
 
-  console.log('test');
-  console.log(Math);
-  console.log(Math.log);
-  console.log(Math.log2);
-
+  Math.log2 = Math.log2 || function(x) {
+    return Math.log(x) / 0.6931471805599453;
+  };
 
   var maxZoom = parseInt(Math.log2(Math.max(imgSize.width, imgSize.height) / 256) + 3)
 
