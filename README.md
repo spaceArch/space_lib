@@ -20,4 +20,14 @@ space.tile('questId', 'sourceImage.jpg', true).then(function(res) {
   maxZoom: 4 
 }
 ```
+## getTilesPath(questId, image)
+```
+getTilesPath('test_quest', 'image.jpg')
+>> /www/space_arch/store/test_quest/tiles/image.jpg
+```
+## getImagePath(questId, image)
+```
+getImagePath('test_quest', 'image.jpg')
+>> /www/space_arch/store/test_quest/images/image.jpg
+```
 

@@ -6,6 +6,7 @@ var extend = require('node.extend');
 var sleep = require('sleep').sleep;
 
 var rootPath = process.env.SPACE_ARCH_PATH;
+var rootPath = '/home/nd0ut/workspace/tiler';
 
 String.prototype.supplant = function (o) {
     return this.replace(/{([^{}]*)}/g,
@@ -87,7 +88,3 @@ function getImagePath(questId, imageName) {
 module.exports.tile = tile;
 module.exports.getTilesPath = getTilesPath;
 module.exports.getImagePath = getImagePath;
-
-tile('questId', 'sourceImage.jpg', true).then(function(res) {
-  console.log(res);
-});
