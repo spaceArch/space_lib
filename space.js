@@ -7,7 +7,6 @@ var im = require('imagemagick');
 var Promise = require('promise');
 
 var rootPath = process.env.SPACE_ARCH_PATH;
-var rootPath = '/home/nd0ut/workspace/tiler/space_arch';
 
 String.prototype.supplant = function (o) {
     return this.replace(/{([^{}]*)}/g,
