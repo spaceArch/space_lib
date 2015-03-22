@@ -67,7 +67,7 @@ function tile(questId, sourceImage, testing) {
   });
 
   return new Promise(function(res, rej) {
-    var cmd = '{createtiles} {imgPath} {tilesPath} {maxZoom}'.supplant({
+    var cmd = '{createtiles} "{imgPath}" "{tilesPath}" {maxZoom}'.supplant({
       createtiles: createtiles,
       imgPath: imgPath,
       tilesPath: tilesPath,
