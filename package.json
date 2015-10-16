@@ -6,6 +6,6 @@
     "image-size": "*",
     "node.extend": "*",
     "imagemagick": "*",
-    "promise": "*"
+    "promise": "7.0.4"
   }
 }
