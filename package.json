@@ -5,7 +5,6 @@
   "dependencies": {
     "image-size": "*",
     "node.extend": "*",
-    "imagemagick": "*",
-    "promise": "*"
+    "imagemagick": "*"
   }
 }
